@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Document</title>
+        <link rel='icon' href='https://caretparrot.github.io/my-libraries/Profile%20Picture.png'>
+        <link rel='stylesheet' href='https://caretparrot.github.io/my-libraries/default.css'>
+        <link rel='stylesheet' href='./style.css'>
+        <script src="./vector.js"></script>
+        <script src="./vector-music.js"></script>
+    </head>
+
+    <body>
+        <svg id="display"></svg>
+        <script>
+            let graph = new Graph(document.getElementById("display"));
+            let vector1 = new Vector([200, 200], [100, 100]);
+            graph.addVector(vector1);
+        </script>
+    </body>
+
+</html>
