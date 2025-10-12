@@ -8,15 +8,21 @@
         <link rel='icon' href='https://caretparrot.github.io/my-libraries/Profile%20Picture.png'>
         <link rel='stylesheet' href='https://caretparrot.github.io/my-libraries/default.css'>
         <link rel='stylesheet' href='./style.css'>
-        <script src="./vector.js"></script>
+        <script src="https:/caretparrot.github.io/my-libraries/math-plus.js"></script>
         <script src="./vector-music.js"></script>
     </head>
 
     <body>
-        <svg id="display"></svg>
+        <svg id="display">
+            <defs>
+                <marker id="arrow" markerWidth="20" markerHeight="20" refX="3" refY="2" orient="auto">
+                    <path d="M 0 0 L 4 2 L 0 4 z" fill="white" />
+                </marker>
+            </defs>
+        </svg>
         <script>
             let graph = new Graph(document.getElementById("display"));
-            let vector1 = new Vector([0, 43], [1, 43]);
+            let vector1 = new Vector([0, 0], [200, 200]);
             graph.addVector(vector1);
         </script>
     </body>
