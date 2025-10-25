@@ -21,9 +21,14 @@
             </defs>
         </svg>
         <script>
+            let a = 0;
             let graph = new Graph(document.getElementById("display"));
-            let vector1 = new Vector([0, 0], [200, 200]);
+            let vector1 = new Vector([100, a], [200, 200]);
             graph.addVector(vector1);
+
+            setInterval(function () {
+                a++;
+            }, 10);
         </script>
     </body>
 
