@@ -16,19 +16,21 @@
         <svg id="display">
             <defs>
                 <marker id="arrow" markerWidth="20" markerHeight="20" refX="3" refY="2" orient="auto">
-                    <path d="M 0 0 L 4 2 L 0 4 z" fill="white" />
                 </marker>
             </defs>
         </svg>
         <script>
-            let a = 0;
+            let x = 0;
             let graph = new Graph(document.getElementById("display"));
-            let vector1 = new Vector([100, a], [200, 200]);
-            graph.addVector(vector1);
+            let mathFunction = new mathPlus.MathFunction("y = 10 * Math.sin(x) + 100", "x");
+            let vector = new Vector([0, 100], [x, mathFunction.evaluate(x)]);
+            graph.setVectorList([vector]);
 
             setInterval(function () {
-                a++;
-            }, 10);
+                x++;
+                vector.setCoords([0, 100], [x, mathFunction.evaluate(x)]);
+                graph.setVectorList([vector]);
+            }, 100);
         </script>
     </body>
 
