@@ -14,17 +14,7 @@
 
     <body>
         <script>
-            let x = 0;
-            let graph = new Graph("display");
-            let mathFunction = new mathPlus.MathFunction("y = 100 * Math.tanh(x / 100)", "x");
-            let vector = new Vector([0, 0], [x, mathFunction.evaluate(x)]);
-            graph.setVectorList([vector]);
-
-            setInterval(function () {
-                x += 1;
-                vector.setCoords([0, 0], [x, mathFunction.evaluate(x)]);
-                graph.setVectorList([vector]);
-            }, 1);
+            
         </script>
     </body>
 
