@@ -1,12 +1,14 @@
 class Graph {
-    constructor(element, stroke = "white", strokeWidth = 5) {
-        this.element = element;
+    constructor(id, stroke = "white", strokeWidth = 5) {
+        this.element = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        this.element.id = id;
+        document.body.appendChild(this.element);
         this.stroke = stroke;
         this.strokeWidth = strokeWidth;
         this.vectorList = [];
 
-        element.setAttribute("transform", "scale(1, -1)");
-        element.innerHTML += `<path d="M 0 0 L 4 2 L 0 4 z" fill="white" />`;
+        this.element.setAttribute("transform", "scale(1, -1)");
+        this.element.innerHTML += `<path d="M 0 0 L 4 2 L 0 4 z" fill="white" />`;
     }
 
     setVectorList(list) {
@@ -22,7 +24,7 @@ class Graph {
     }
 
     clear() {
-        this.element.innerHTML = "";
+        this.element.innerHTML = `<marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3" markerHeight="3" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="white" /></marker>`;
     }
 }
 

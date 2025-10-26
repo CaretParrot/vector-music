@@ -13,24 +13,18 @@
     </head>
 
     <body>
-        <svg id="display">
-            <defs>
-                <marker id="arrow" markerWidth="20" markerHeight="20" refX="3" refY="2" orient="auto">
-                </marker>
-            </defs>
-        </svg>
         <script>
             let x = 0;
-            let graph = new Graph(document.getElementById("display"));
-            let mathFunction = new mathPlus.MathFunction("y = 10 * Math.sin(x) + 100", "x");
-            let vector = new Vector([0, 100], [x, mathFunction.evaluate(x)]);
+            let graph = new Graph("display");
+            let mathFunction = new mathPlus.MathFunction("y = 100 * Math.tanh(x / 100)", "x");
+            let vector = new Vector([0, 0], [x, mathFunction.evaluate(x)]);
             graph.setVectorList([vector]);
 
             setInterval(function () {
-                x++;
-                vector.setCoords([0, 100], [x, mathFunction.evaluate(x)]);
+                x += 1;
+                vector.setCoords([0, 0], [x, mathFunction.evaluate(x)]);
                 graph.setVectorList([vector]);
-            }, 100);
+            }, 1);
         </script>
     </body>
 
